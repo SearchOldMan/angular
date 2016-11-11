@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<table border="1" width="500px" class="table_a" cellpadding="0" id="student">
+	            
+	            <tr>
+	                <td width="18%">
+	                    <input type="checkbox" name="auth_id[]" value="学生基本信息">学生基本信息
+	                </td>
+	                <td>
+	                    <div style="width:200px; float:left;">
+	                        <input type="checkbox" name="auth_id[]" value="男" onclick="show_result(0)">男
+	                    </div>
+	                </td>
+	                <td>
+	                    <div style="width:200px; float:left;">
+	                        <input type="checkbox" name="auth_id[]" value="女"  onclick="show_result(0)">女
+	                    </div>
+	                </td>
+	                <td>
+	                    <div style="width:200px; float:left;">
+	                        <input type="checkbox" name="auth_id[]"  onclick="show_result(0)">高中
+	                    </div>
+	                </td>
+	            </tr>
+	            
+	            
+	            <tr>
+	                <td colspan="2" align="center">
+	                    <input type="checkbox" value="分配权限" />分配权限
+	                </td>
+	                <td>
+	                    <div style="width:200px; float:left;">
+	                        <input type="checkbox" name="auth_id[]"  onclick="show_result(1)">高中
+	                    </div>
+	                </td>
+	                <td>
+	                    <div style="width:200px; float:left;">
+	                        <input type="checkbox" name="auth_id[]"  onclick="show_result(1)">初中
+	                    </div>
+	                </td>
+	            </tr>
+	              
+	</table>
+<script>
+
+	//获取table节点
+	var table = document.getElementById('student');
+	//获取所有的tr
+	var trs = table.getElementsByTagName('tr');
+	//存放获取到的td
+	var arrTd = [];
+	//存放获取到的div
+	var arrDiv = [];
+	//获取td	
+	get_element_td(trs,arrTd);
+	//获取div
+	get_element_div(arrTd,arrDiv);
+	
+	//把tr下的第一个td拿出来
+	var temp = [];
+	for(var i=0;i<trs.length;i++)
+	{
+		temp.push(trs[i].cells[0]);
+	}
+
+	//两个for循环获取元素的函数
+	function get_element_td(sourceele,arr)
+	{
+		//获取tr下的td
+		for(var i=0;i<sourceele.length;i++)
+		{
+			var tds = sourceele[i].children;
+			for(var j=0;j<tds.length;j++)
+			{
+				arr.push(tds[j]);
+			}
+		}
+	}
+
+	//一个for循环获取元素的函数
+	function get_element_div(sourceele,arr)
+	{
+
+		for(var i=0;i<sourceele.length;i++)
+		{
+			var div = sourceele[i].children;  //获取了一个数组
+			arr.push('div');	
+		}
+	}
+
+	//所有的行均可以调用该函数
+	function show_result(num)
+	{
+		//学生基本信息对象
+		var studentDetail = temp[num].children[0];
+		//用来记录学生基本信息的勾选状态
+		var flag = studentDetail.checked;
+		//没勾选
+		if(!flag)
+		{
+			studentDetail.checked = 'true';
+		}
+		
+	}
+
+	
+</script>	
+</body>
+</html>

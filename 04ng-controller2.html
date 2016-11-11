@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<table ng-app="myApp" ng-controller="loginController">
+		<tr>
+			<td>用户名：</td>
+			<td><input type="text" name="" id="" ng-model="user.username"></td>
+		</tr>
+		<tr>
+			<td>密码：</td>
+			<td><input type="password" name="" id="" ng-model="user.password"></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><input type="button" value="登陆" ng-click="login()"></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>{{message}}</td>
+		</tr>
+	</table>
+
+	<script src="bower_components/angular/angular.js"></script>
+	<script>
+		//创建模块
+		var app = angular.module('myApp',[]);
+		//添加模块的控制器
+		app.controller('loginController',['$scope',function($scope){
+			//定义$scope的数据格式
+			$scope.user = {
+				username:'',
+				password:''
+			};
+
+			//定义页面上的点击函数
+			$scope.login = function(){
+				console.log($scope.user);
+			}
+			$scope.message = '请输入用户名';
+
+			//监视用户名的变化
+			$scope.$watch('user.username',function(now,old){
+				//判断用户名是不是为空
+				if(now)
+				{
+					if(now.length < 7)
+					{
+						$scope.message = '输入的用户名不合法';
+					}else{
+						$scope.message = '用户名合法';
+					}
+				}else{
+					$scope.message = '请输入用户名';
+				}
+			});
+		}]);
+	</script>
+</body>
+</html>
