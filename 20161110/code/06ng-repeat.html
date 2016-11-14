@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.red{
+			color:red;
+		}
+		.green{
+			color:green;
+		}
+	</style>
+</head>
+<body>
+	<div ng-app="myapp">
+		<ul ng-controller="list">
+			<li ng-repeat="item in data" data-id="{{item.id}}" ng-class="{red:$even,green:$odd}"><strong>{{item.name}}</strong>&nbsp;&nbsp;<span>{{item.age}}</span></li>
+		</ul>
+	</div>
+	<script src="bower_components/angular/angular.js"></script>
+	<script>
+		var myapp = angular.module('myapp',[]);
+		myapp.controller('list', ['$scope', function($scope){
+			
+			$scope.data = [];
+			for(var i=1;i<10;i++)
+			{
+				$scope.data[$scope.data.length] = {
+					id:i,
+					name:'zhangsan'+i,
+					age:20+i
+				};
+			}
+		}]);
+	</script>
+</body>
+</html>
