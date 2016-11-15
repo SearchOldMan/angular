@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="node_modules/bower_components/angular/angular.js"></script>
+</head>
+<body ng-app="myapp">
+	<input type="text" placeholder="输入体重" ng-model="weight">
+	<p>您{{weight}}</p>
+	<p>{{weight | weight}}</p>
+	<script>
+		/**
+		* myapp Module
+		*
+		* Description
+		*/
+		angular.module('myapp', [])
+			.filter('weight',function(){
+				return function(input){
+					if(input>200)
+					{
+						return '太胖了';
+					}else{
+						return '太瘦了';
+					}
+				}
+		});
+	</script>
+</body>
+</html>
