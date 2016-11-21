@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="../moviecat/app/bower_components/bootstrap/dist/css/bootstrap.css">
+</head>
+<body>
+	<ul class="pagination"></ul>
+	<script>
+		/*分析：
+			1.变量；
+			2、运算
+		*/
+		var current = 30;  //当前是第几页
+		var total = 30;  //总的几个
+		var show = 5;  //每页显示几个
+
+		
+		//正常情况下，左右显示的序号
+		var iSpeed = Math.floor(show / 2) //3 12 45,  间隔
+		//开始序号
+		var begin = current - iSpeed;  //从第几页开始  5 3,6 4
+		begin = begin < 0?1:begin;
+		//结束序号
+		var end = begin + show;
+		if(end > total)
+		{
+			end = total + 1;
+			begin = end - show;
+			begin = begin < 0?1:begin;
+		}
+
+		//dom操作
+		var container = document.getElementsByClassName('pagination')[0];
+		//上一页
+		var prev = document.createElement('li');
+		prev.innerHTML = '<a href="#">&laquo;</a>';
+		container.appendChild(prev);
+
+		//当前是第一页
+		if(current == 1)
+		{
+			prev.classList.add('disabled');
+		}
+		for(var i=begin;i<end;i++)
+		{
+			//console.log(i)
+			var liele = document.createElement('li');
+			liele.innerHTML = '<a href="#">'+i+'</a>';
+			if( i == current)
+			{
+				liele.classList.add('active');
+			}
+			container.appendChild(liele);
+		}
+		//下一页
+		var next = document.createElement('li');
+		next.innerHTML = '<a href="#">&raquo;</a>';
+
+
+		//最后一页
+		if(current == total)
+		{
+			next.classList.add('disabled');
+		}
+		container.appendChild(next);
+	</script>
+</body>
+</html>

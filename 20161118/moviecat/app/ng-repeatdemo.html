@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="bower_components/angular/angular.js"></script>
+</head>
+<body ng-app="myApp">
+    <table ng-controller="myCtrl" border="1">
+    <tr ng-repeat="x in records">
+        <td>{{x.title}}</td>
+        <td>{{x.images.small}}</td> 
+    </tr>
+    </table>
+
+    <script>
+        var app = angular.module("myApp", []);
+        app.controller("myCtrl", ['$scope',function($scope){
+            $scope.records = [
+            {
+                "rating": {
+                  "max": 10,
+                  "average": 7.9,
+                  "stars": "40",
+                  "min": 0
+                },
+                "genres": [
+                  "动作",
+                  "科幻",
+                  "奇幻"
+                ],
+                "title": "奇异博士",
+                "casts": [
+                  {
+                    "alt": "https://movie.douban.com/celebrity/1009405/",
+                    "avatars": {
+                      "small": "http://img7.doubanio.com/img/celebrity/small/41072.jpg",
+                      "large": "http://img7.doubanio.com/img/celebrity/large/41072.jpg",
+                      "medium": "http://img7.doubanio.com/img/celebrity/medium/41072.jpg"
+                    },
+                    "name": "本尼迪克特·康伯巴奇",
+                    "id": "1009405"
+                  },
+                  {
+                    "alt": "https://movie.douban.com/celebrity/1025152/",
+                    "avatars": {
+                      "small": "http://img3.doubanio.com/img/celebrity/small/3546.jpg",
+                      "large": "http://img3.doubanio.com/img/celebrity/large/3546.jpg",
+                      "medium": "http://img3.doubanio.com/img/celebrity/medium/3546.jpg"
+                    },
+                    "name": "蒂尔达·斯文顿",
+                    "id": "1025152"
+                  },
+                  {
+                    "alt": "https://movie.douban.com/celebrity/1040529/",
+                    "avatars": {
+                      "small": "http://img7.doubanio.com/img/celebrity/small/57893.jpg",
+                      "large": "http://img7.doubanio.com/img/celebrity/large/57893.jpg",
+                      "medium": "http://img7.doubanio.com/img/celebrity/medium/57893.jpg"
+                    },
+                    "name": "麦斯·米科尔森",
+                    "id": "1040529"
+                  }
+                ],
+                "collect_count": 131025,
+                "original_title": "Doctor Strange",
+                "subtype": "movie",
+                "directors": [
+                  {
+                    "alt": "https://movie.douban.com/celebrity/1320372/",
+                    "avatars": {
+                      "small": "http://img3.doubanio.com/img/celebrity/small/49077.jpg",
+                      "large": "http://img3.doubanio.com/img/celebrity/large/49077.jpg",
+                      "medium": "http://img3.doubanio.com/img/celebrity/medium/49077.jpg"
+                    },
+                    "name": "斯科特·德瑞克森",
+                    "id": "1320372"
+                  }
+                ],
+                "year": "2016",
+                "images": {
+                  "small": "http://img7.doubanio.com/view/movie_poster_cover/ipst/public/p2388501883.jpg",
+                  "large": "http://img7.doubanio.com/view/movie_poster_cover/lpst/public/p2388501883.jpg",
+                  "medium": "http://img7.doubanio.com/view/movie_poster_cover/spst/public/p2388501883.jpg"
+                },
+                "alt": "https://movie.douban.com/subject/3025375/",
+                "id": "3025375"
+            }];
+        }]);
+    </script>
+</body>
+</html>

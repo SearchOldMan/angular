@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>异步加载库</title>
+</head>
+<body>
+  <!-- 无法处理加载模块的顺序，只是将文件引入 -->
+  <script src="bower_components/script.js/dist/script.js"></script>
+
+  <!-- 自动为我们引进来的库排序 -->
+  <script src="bower_components/angular-loader/angular-loader.js"></script>
+  <script>
+    $script([
+        'bower_components/angular/angular.js',
+        'bower_components/angular-route/angular-route.js',
+        'components/http.js',
+        'components/auto-focus.js',
+        'movie_list/controller.js',
+        'app.js'
+      ],function(){
+        angular.bootstrap(document, ['moviecat']);
+      });
+  </script>
+</body>
+</html>
