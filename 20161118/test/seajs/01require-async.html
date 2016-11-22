@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="bower_components/seajs/dist/sea.js"></script>
+</head>
+<body>
+	
+	<script>
+		
+		seajs.use('./require_module1.js',function(data){
+			console.log(data);
+		});
+	</script>
+</body>
+</html>

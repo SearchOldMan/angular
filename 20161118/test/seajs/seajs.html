@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Seajs初体验</title>
+	<script src="bower_components/seajs/dist/sea.js"></script>
+</head>
+<body>
+	<script>
+		//seajs的语言规定，引入模块时  必须使用相对路径
+		seajs.use('./calcular.js',function(data){
+			console.log(data);
+		});
+	</script>
+</body>
+</html>

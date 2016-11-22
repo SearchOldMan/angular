@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>命名空间</title>
+</head>
+<body>
+	
+	<script>
+		(function(calcular) {
+			function reltive(input){
+				return parseInt(input);
+			};
+
+			//加法
+			calcular.add = function (a,b){
+				return reltive(a)+reltive(b);
+			};
+
+			//减法
+			calcular.subtract = function (a,b){
+				return reltive(a)-reltive(b);
+			};
+
+			//成法
+			calcular.multiply = function (a,b){
+				return reltive(a)*reltive(b);
+			};
+
+			//除法
+			calcular.diverde = function (a,b){
+				return reltive(a)/reltive(b);
+			};
+
+			//暴露给window的变量
+			window.calcular = calcular;
+		})(window.calcular || {});
+	</script>
+</body>
+</html>

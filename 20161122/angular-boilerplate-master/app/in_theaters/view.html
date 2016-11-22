@@ -1,0 +1,35 @@
+
+
+<h3 class="page">正在热映</h3>
+<div class="list-group">
+  <a href="#" class="list-group-item" ng-repeat="items in subjects">
+    <div class="media">
+	  <div class="media-left">
+	    <img class="media-object" ng-src="{{items.images.small}}" alt="items.title" height=128> 
+	  </div>
+	  <div class="media-body">
+	    <h4 class="media-heading">{{items.title}}</h4>
+	    <p>
+          类型：<span>{{items.genres.join('、')}}</span>&nbsp;&nbsp;&nbsp;&nbsp; 上映年份：
+          <span>{{items.year}}</span></p>
+        <p>
+          捣眼：
+          <span ng-repeat="d in items.directors">
+	        	{{d.name + ($last?'':'、')}}
+	        	<!-- <span ng-if="!$last">、</span> -->
+          </span>
+        </p>
+        <p>
+          主演：
+          <span ng-repeat="c in items.casts">
+	        	{{c.name}}{{$last?'':'、'}}
+	        	<!-- <span ng-if="!$last">、</span> -->
+          </span>
+        </p>
+	  </div>
+	</div>
+  </a>
+  
+</div>
+
+<p>总的有{{total}}条,{{pageCount}}页</p>
