@@ -1,20 +1,19 @@
 0 info it worked if it ends with ok
 1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
 1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
-1 verbose cli   'run',
 1 verbose cli   'start' ]
 2 info using npm@3.10.8
 3 info using node@v6.9.1
 4 verbose run-script [ 'prestart', 'start', 'poststart' ]
 5 info lifecycle angular-boilerplate@1.0.0~prestart: angular-boilerplate@1.0.0
 6 verbose lifecycle angular-boilerplate@1.0.0~prestart: unsafe-perm in lifecycle true
-7 verbose lifecycle angular-boilerplate@1.0.0~prestart: PATH: C:\Users\P109\AppData\Roaming\nvm\v6.9.1\node_modules\npm\bin\node-gyp-bin;E:\learngit\angular\20161122\angular-boilerplate-master\node_modules\.bin;%SystemRoot%\system32\WindowsPowerShell\v1.0\;C:\Users\P109\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\nodejs\node_global;C:\Program Files\Git\cmd;C:\Program Files (x86)\Microsoft VS Code\bin;D:\vscode\Microsoft VS Code\bin;node_global;
+7 verbose lifecycle angular-boilerplate@1.0.0~prestart: PATH: C:\Users\P109\AppData\Roaming\nvm\v6.9.1\node_modules\npm\bin\node-gyp-bin;E:\learngit\angular\20161122\angular-boilerplate-master\node_modules\.bin;%SystemRoot%\system32\WindowsPowerShell\v1.0\;C:\Users\P109\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\nodejs\node_global;C:\Program Files\Git\cmd;C:\Program Files (x86)\Microsoft VS Code\bin;D:\vscode\Microsoft VS Code\bin
 8 verbose lifecycle angular-boilerplate@1.0.0~prestart: CWD: E:\learngit\angular\20161122\angular-boilerplate-master
 9 silly lifecycle angular-boilerplate@1.0.0~prestart: Args: [ '/d /s /c', 'npm install' ]
 10 silly lifecycle angular-boilerplate@1.0.0~prestart: Returned: code: 0  signal: null
 11 info lifecycle angular-boilerplate@1.0.0~start: angular-boilerplate@1.0.0
 12 verbose lifecycle angular-boilerplate@1.0.0~start: unsafe-perm in lifecycle true
-13 verbose lifecycle angular-boilerplate@1.0.0~start: PATH: C:\Users\P109\AppData\Roaming\nvm\v6.9.1\node_modules\npm\bin\node-gyp-bin;E:\learngit\angular\20161122\angular-boilerplate-master\node_modules\.bin;%SystemRoot%\system32\WindowsPowerShell\v1.0\;C:\Users\P109\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\nodejs\node_global;C:\Program Files\Git\cmd;C:\Program Files (x86)\Microsoft VS Code\bin;D:\vscode\Microsoft VS Code\bin;node_global;
+13 verbose lifecycle angular-boilerplate@1.0.0~start: PATH: C:\Users\P109\AppData\Roaming\nvm\v6.9.1\node_modules\npm\bin\node-gyp-bin;E:\learngit\angular\20161122\angular-boilerplate-master\node_modules\.bin;%SystemRoot%\system32\WindowsPowerShell\v1.0\;C:\Users\P109\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\nodejs\node_global;C:\Program Files\Git\cmd;C:\Program Files (x86)\Microsoft VS Code\bin;D:\vscode\Microsoft VS Code\bin
 14 verbose lifecycle angular-boilerplate@1.0.0~start: CWD: E:\learngit\angular\20161122\angular-boilerplate-master
 15 silly lifecycle angular-boilerplate@1.0.0~start: Args: [ '/d /s /c', 'hs -a localhost -p 9000 -o' ]
 16 silly lifecycle angular-boilerplate@1.0.0~start: Returned: code: 3221225786  signal: null
@@ -32,7 +31,7 @@
 19 verbose pkgid angular-boilerplate@1.0.0
 20 verbose cwd E:\learngit\angular\20161122\angular-boilerplate-master
 21 error Windows_NT 6.1.7601
-22 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "run" "start"
+22 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "start"
 23 error node v6.9.1
 24 error npm  v3.10.8
 25 error code ELIFECYCLE
